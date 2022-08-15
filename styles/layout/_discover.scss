@@ -1,0 +1,66 @@
+@use "../abstracts/index" as *;
+.discover {
+  padding-bottom: 24px;
+  border: none;
+  margin-left: -20px;
+  @include responsive(large) {
+    border-bottom: solid 2px #999999;
+    margin-left: 0;
+  }
+  &__header {
+    font-weight: 600;
+    margin: 12px;
+    margin-top: 16px;
+    display: none;
+    color: #343434;
+    @include responsive(large) {
+      display: block;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-left: -4px;
+    &__activeTopic {
+      padding: 8px 12px;
+      border-radius: 24px;
+      @include align(flex, center, center, auto);
+      gap: 8px;
+      cursor: pointer;
+      color: #f51997;
+      @include responsive(large) {
+        border: solid 2px #f51997;
+      }
+    }
+    &__topic {
+      padding: 8px 12px;
+      border-radius: 24px;
+      @include align(flex, center, center, auto);
+      gap: 8px;
+      cursor: pointer;
+      color: #000;
+      @include responsive(large) {
+        border: solid 2px #555555;
+      }
+      &__name {
+        display: none;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 16px;
+        @include responsive(large) {
+          display: block;
+        }
+      }
+      &__icon {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+        @include responsive(large) {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

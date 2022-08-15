@@ -1,0 +1,70 @@
+@use "../abstracts/index" as *;
+
+.sidebar {
+  display: block;
+  &__icon {
+    display: block;
+    margin: 12px 0 0 16px;
+    @include responsive(large) {
+      display: none;
+    }
+  }
+  &__menu {
+    width: 20px;
+    padding: 0 20px 20px 20px;
+    border: none;
+    flex-direction: column;
+    margin-bottom: 40px;
+    border-right: solid 1px #999999;
+    @include align(flex, flex-start, null, auto);
+    @include responsive(large) {
+      width: 400px;
+      border-right: none;
+    }
+    &__content {
+      padding-bottom: 16px;
+      border-bottom: 2px solid #333333;
+      @include responsive(large) {
+        padding-bottom: 0;
+        border-bottom: 2px solid #999999;
+      }
+
+      &__activeLink {
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+        gap: 12px;
+
+        color: #f51997;
+        @include align(flex, center, center, auto);
+        @include responsive(large) {
+          @include align(flex, flex-start, center, auto);
+        }
+      }
+
+      &__normalLink {
+        font-weight: 600;
+        cursor: pointer;
+        gap: 12px;
+        border-radius: 5px;
+        @include align(flex, center, center, auto);
+        @include responsive(large) {
+          @include align(flex, flex-start, center, auto);
+        }
+      }
+      &__text {
+        text-transform: capitalize;
+        font-size: 20px;
+        line-height: 28px;
+        display: none;
+        @include responsive(large) {
+          display: block;
+        }
+      }
+      &__icon {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+  }
+}
